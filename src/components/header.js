@@ -8,7 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
 } from "reactstrap"
 
 class Header extends React.Component {
@@ -29,8 +28,8 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar fixed="top" color="light" light expand="sm">
+      <Navbar fixed="top" color="light" light expand="sm">
+        <div className="container">
           <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -45,10 +44,9 @@ class Header extends React.Component {
                 <NavLink href="/tags">Tags</NavLink>
               </NavItem>
             </Nav>
-            <NavbarText>Simple Text</NavbarText>
           </Collapse>
-        </Navbar>
-      </div>
+        </div>
+      </Navbar>
     )
   }
 }
